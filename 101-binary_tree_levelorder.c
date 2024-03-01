@@ -1,48 +1,39 @@
 #include "binary_trees.h"
 
 /**
- * bst_insert - inserts a value in a Binary Search Tree
- * @tree: a double pointer to the root node of the BST to insert the value
- * @value: the value to store in the node to be inserted
- * Return: A pointer to the created node
- *         NULL on failure
+ * binary_tree_size - measures the size of a binary tree
+ * @tree: tree to measure the size of
+ *
+ * Return: size of the tree
+ *         0 if tree is NULL
  */
-bst_t *bst_insert(bst_t **tree, int value)
+size_t binary_tree_size(const binary_tree_t *tree)
 {
-	bst_t *tmp = NULL;
-	bst_t *second = NULL;
-	bst_t *new = NULL;
+    if (!tree)
+        return (0);
 
-	if (!tree)
-		return (NULL);
-	if (*tree == NULL)
-		return (*tree = binary_tree_node(NULL, value));
+    size_t size = 1;
+    binary_tree_t **stack = NULL;
+    size_t top = 0;
 
-	tmp = *tree;
-	while (tmp)
-	{
-		second = tmp;
-		if (value < tmp->n)
-			tmp = tmp->left;
-		else if (value > tmp->n)
-			tmp = tmp->right;
-		else if (value == tmp->n)
-			return (NULL);
-	}
+    binary_tree_t *current = tree;
+    while (current || top)
+    {
+        while (current)
+        {
+            if (stack)
+                stack[top++] = current;
+            current = current->left;
+            size++;
+        }
 
-	new = binary_tree_node(NULL, value);
-	if (second == NULL)
-		second = new;
-	else if (value < second->n)
-	{
-		second->left = new;
-		new->parent = second;
-	}
-	else
-	{
-		second->right = new;
-		new->parent = second;
-	}
+        if (top)
+        {
+            current = stack[--top];
+            current = current->right;
+        }
+    }
 
-	return (new);
+    return size;
 }
+
