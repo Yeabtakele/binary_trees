@@ -1,13 +1,20 @@
-nary trees
-
+## 0x1D. C - Binary trees 
 Project done during **Full Stack Software Engineering studies** at **ALX School**. It aims to learn about what is a binary tree, the different traversal methods to go through a binary tree and the different types of binary trees (complete, full, perfect and balanced).
-
 ## Technologies
-* Scripts written in Bash 4.4.23(1)
-* C files are compiled using `gcc 6.3.0`
-* Tested on Ubuntu 20.04 LTS
+# Allowed Editors: vi, vim, emacs
+* Compilation Environment: Ubuntu 20.04 LTS, using gcc with options: -Wall -Werror -Wextra -pedantic -std=gnu89
+* File Requirements: All files should end with a new line
+* README.md Requirement: A README.md file at the root of the project folder is mandatory
+* Coding Style: Code should adhere to the Betty style; it will be checked using betty-style.pl and betty-doc.pl
+* Global Variables: Not allowed
+* Function Limit: No more than 5 functions per file
+* Standard Library: Allowed for use
+* Examples: Provided main.c files can be used to test functions, but don't need to be pushed to the repo
+* Prototypes: Prototypes of all functions should be included in a header file named binary_trees.h
+* Header File Push: Don't forget to push your header f
+* Header File Guard: Include guards should be used in all header file
 
-## Files
+## Tasks Files Data structures  Binary Tree
 
 | Filename | Description |
 | -------- | ----------- |
